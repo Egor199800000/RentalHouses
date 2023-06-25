@@ -18,6 +18,10 @@ public class HomeController {
 @Autowired
     private HouseService houseService;
 
+@GetMapping(value = "/")
+    public String firstPage(Model model){
+        return "home";
+    }
 
     @GetMapping(value = "/main")
     public String getHome(Model model){
