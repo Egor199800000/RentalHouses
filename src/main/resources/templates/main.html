@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>main</title>
+</head>
+<body>
+
+
+<div class="container">
+  <div class="row">
+    <label for="each"></label>
+    <table id="each">
+       <div style="max-width: 1.5em" th:each="house: ${houses}">
+        <div style="color: green" th:text="${house.price}"></div>
+        <div style="color: red" th:text="${house.description}"></div>
+        <a id="linkWithVariablePath"
+           th:href="@{http://localhost:8080/main/viewHouse/{id}(id=${house.id})}">
+          linkWithVariablePath</a>
+      </div>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
